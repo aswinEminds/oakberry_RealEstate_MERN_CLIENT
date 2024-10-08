@@ -53,22 +53,34 @@ function NavBar() {
       <nav className="menu-items-mobile">
         <ul className="m-0 p-0">
           <li>
-            <Link to="/">Home</Link>
+            <Link onClick={openMenu} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link onClick={openMenu} to="/about">
+              About
+            </Link>
           </li>
           <li>
-            <Link to="properties">Properties</Link>
+            <Link onClick={openMenu} to="properties">
+              Properties
+            </Link>
           </li>
           <li>
-            <Link to="/agents">Agents</Link>
+            <Link onClick={openMenu} to="/agents">
+              Agents
+            </Link>
           </li>
           <li>
-            <Link to="/blogs">Blogs</Link>
+            <Link onClick={openMenu} to="/blogs">
+              Blogs
+            </Link>
           </li>
           <li>
-            <Link to="/contacts">Contacts</Link>
+            <Link onClick={openMenu} to="/contacts">
+              Contacts
+            </Link>
           </li>
         </ul>
       </nav>
