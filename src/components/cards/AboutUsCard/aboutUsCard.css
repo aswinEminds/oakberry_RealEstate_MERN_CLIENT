@@ -1,0 +1,82 @@
+.aboutuscard-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutuscard-parent .container {
+  margin: 8rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 0;
+}
+
+.aboutuscard-parent .left {
+  flex: 1;
+}
+
+.aboutuscard-parent .right {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutuscard-parent .right .img {
+  flex: 1;
+  max-height: 400px;
+}
+
+.aboutuscard-parent .right .img {
+  width: 100%;
+  background-color: red;
+}
+
+.aboutuscard-parent .right .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aboutuscard-parent .left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutuscard-parent .right p {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+}
+.aboutuscard-parent .right h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.aboutuscard-parent .right span {
+  color: gray;
+}
+
+.aboutuscard-parent .container .right .showcase {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+@media (max-width: 800px) {
+  .aboutuscard-parent .left {
+    display: none;
+  }
+
+  .aboutuscard-parent {
+    padding: 1rem;
+  }
+
+  .aboutuscard-parent .showcase {
+    flex-direction: column;
+  }
+}

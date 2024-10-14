@@ -1,0 +1,120 @@
+.contact-parent {
+  width: 100%;
+}
+
+.contact-parent p {
+  margin: 0;
+}
+
+.contact-parent .contact-us {
+  background-color: var(--grey-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.contact-parent .contact-us .container {
+  display: flex;
+  background-color: white;
+}
+
+.contact-parent .contact-us .container .contact-us-form {
+  padding: 2.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-parent .contact-us .container .contact-us-image {
+  padding: 2.5rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-parent .contact-us .container .contact-us-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-us-form .headings h3 {
+  font-weight: bolder;
+}
+.contact-us-form .headings p {
+  font-size: 17px;
+  color: gray;
+}
+
+.contact-us-form .contact-details {
+  display: flex;
+  gap: 1rem;
+}
+.contact-us-form .contact-details div {
+  flex: 1;
+}
+
+.contact-details div p {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.contact-us-form .contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.contact-form .input-field {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px rgb(207, 207, 207) solid;
+  outline: none;
+  padding: 0.3rem;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.contact-form .input-field:focus {
+  border-bottom: 1.5px var(--primary-color) solid;
+}
+
+.contact-us-form .follow-us div {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-us-form .follow-us div a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(45, 45, 45);
+}
+
+@media (max-width: 800px) {
+  .contact-parent .contact-us .container .contact-us-image {
+    display: none;
+  }
+  .contact-parent .contact-us .container .contact-us-form {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .contact-parent .contact-us {
+    padding: 1rem 0;
+  }
+
+  .contact-us-form .contact-details {
+    flex-direction: column;
+  }
+
+  .contact-us-form .follow-us div {
+    flex-direction: column;
+  }
+}

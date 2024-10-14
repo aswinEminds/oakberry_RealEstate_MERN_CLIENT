@@ -1,0 +1,28 @@
+.testimonial-parent {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: var(--grey-color);
+}
+
+.testimonial-parent .slides {
+  margin-top: 3rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.testimonial-parent .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.testimonial-parent .swiper-pagination {
+  position: relative !important;
+  margin: 2rem 0;
+}
+
+.testimonial-parent .swiper-pagination .swiper-pagination-bullet {
+  background-color: var(--primary-color);
+}

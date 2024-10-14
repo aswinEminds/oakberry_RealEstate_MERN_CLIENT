@@ -1,0 +1,28 @@
+.agent-paarent {
+  width: 100vw;
+  align-self: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.agents-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+
+.agents-section .agents {
+}
+
+@media (max-width: 800px) {
+  .agents-section {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

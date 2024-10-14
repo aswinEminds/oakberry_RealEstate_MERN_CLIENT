@@ -1,0 +1,51 @@
+.hero-section-card {
+  color: white;
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.hero-section-card .texts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section-card .texts h1 {
+  font-size: 50px;
+}
+
+.hero-section-card .texts .breadcrums {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-section-card .texts .breadcrums p {
+  margin: 0;
+}
+
+.hero-section-card .texts .breadcrums a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.hero-section-card .texts .breadcrums .home:hover {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.hero-section-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

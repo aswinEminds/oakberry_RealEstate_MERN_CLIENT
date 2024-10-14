@@ -1,0 +1,120 @@
+.propery-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(100, 100, 111, 0.021) 0px 7px 29px 0px;
+  transition: all 0.5s ease;
+}
+
+.propery-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.propery-card:hover .image img {
+  filter: brightness(1);
+}
+
+.propery-card p {
+  color: gray;
+  font-size: 14px;
+  margin: 0;
+}
+
+.propery-card .image {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.propery-card .image img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.propery-card .image p {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 0 8px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.propery-card .top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.propery-card .center {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.propery-card .center .property-details {
+  display: flex;
+  gap: 1rem;
+}
+
+.property-details .category {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 13px;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.propery-card .bottom {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.rooms,
+.bath-rooms,
+.squre-feet {
+  display: flex;
+  gap: 8px;
+}
+
+.propery-card .texts {
+  width: 100%;
+  padding: 1rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.texts .user {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.texts .user .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.user .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}

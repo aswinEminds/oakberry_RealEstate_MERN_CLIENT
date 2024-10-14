@@ -38,8 +38,6 @@
 
 .carousel-indicators {
   position: absolute;
-  right: 0;
-  bottom: 0;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -172,11 +170,13 @@
   color: var(--primary-color);
   text-transform: uppercase;
   font-weight: bolder;
+  padding: 0;
   font-size: 13px;
 }
 
 .heading {
   font-size: 50px;
+  font-weight: bold;
 }
 
 .categories {
@@ -188,7 +188,7 @@
   align-items: center;
 }
 
-.category {
+.categories .category {
   display: flex;
   padding: 4rem;
   gap: 0.5rem;
@@ -203,7 +203,7 @@
   transition: all 0.3s ease;
 }
 
-.category:hover {
+.categories .category:hover {
   background-color: var(--primary-color);
   color: white;
 }
@@ -260,6 +260,68 @@
   max-width: fit-content;
 }
 
+.grey-section {
+  background-color: var(--grey-color);
+}
+
+.featured-properties {
+  padding-top: 8rem;
+}
+
+.featured-properties .properties {
+  margin-top: 3rem;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.home-parent .agents {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.home-parent .agents .container {
+  padding: 5rem;
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.home-parent .agents .agents-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 65%;
+  content: "";
+  background: #050d21;
+  z-index: -1;
+}
+
+.home-parent .agents .agents-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.home-parent .agents .agents-list .agent-card {
+  border-radius: 5px !important;
+}
+
+.home-parent .agents .agents-list .agent-card .image img {
+  border-radius: 5px !important;
+}
+
 @media (max-width: 1000px) {
   .carousel-indicators {
     display: none;
@@ -291,7 +353,7 @@
     flex-direction: column;
   }
 
-  .category {
+  .categories .category {
     width: 100%;
   }
 
@@ -306,5 +368,21 @@
   .places {
     flex-direction: column;
     gap: 6rem;
+  }
+  .heading {
+    font-size: 28px;
+  }
+
+  .featured-properties .properties {
+    grid-template-columns: 1fr;
+  }
+
+  .home-parent .agents .agents-list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-parent .agents .container {
+    padding: 1rem;
+    align-items: center;
   }
 }

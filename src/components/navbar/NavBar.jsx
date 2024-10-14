@@ -43,7 +43,9 @@ function NavBar() {
           </ul>
         </nav>
         <div className="user">
-          <PrimaryButton text="Submit the Properties" isRounded={true} />
+          <Link to="/login">
+            <PrimaryButton text="Login" isRounded={true} />
+          </Link>
         </div>
         <Link onClick={openMenu} className="menu-button">
           {isMobileMenuVisbile ? <IoClose /> : <GiHamburgerMenu />}
@@ -85,7 +87,7 @@ function NavBar() {
         </ul>
       </nav>
       <div className="user-mobile">
-        <PrimaryButton text="Submit the Properties" isRounded={true} />
+        <PrimaryButton text="Login" isRounded={true} />
       </div>
     </header>
   );
