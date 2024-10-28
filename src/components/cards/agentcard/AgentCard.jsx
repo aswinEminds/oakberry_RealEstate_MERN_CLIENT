@@ -5,19 +5,15 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 
-const AgentCard = () => {
+const AgentCard = ({ agentsData }) => {
   return (
     <div className="agent-card">
       <div className="image">
-        <img
-          className="img-fluid"
-          src="https://preview.colorlib.com/theme/oakberry/images/team-3.jpg"
-          alt=""
-        />
+        <img className="img-fluid" src={agentsData.profilePicture} alt="" />
       </div>
       <div className="agent-details">
-        <p>Listing 10 Properties</p>
-        <h4>Mike Bochs</h4>
+        <p>Listing {agentsData.propertiesCount} Properties</p>
+        <h4>{agentsData.name}</h4>
         <div className="social-logos">
           <div className="social-icons">
             <RiFacebookFill className="icon" />

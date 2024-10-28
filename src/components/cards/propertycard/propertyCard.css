@@ -4,7 +4,7 @@
   gap: 1rem;
   background-color: white;
   border-radius: 4px;
-  box-shadow: rgba(100, 100, 111, 0.021) 0px 7px 29px 0px;
+  box-shadow: rgba(32, 32, 34, 0.021) 0px 7px 29px 0px;
   transition: all 0.5s ease;
 }
 
@@ -37,10 +37,15 @@
   filter: brightness(0.7);
 }
 
-.propery-card .image p {
+.propery-card .image div {
   position: absolute;
   bottom: 20px;
   left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.propery-card .image p {
   color: white;
   background-color: var(--primary-color);
   padding: 0 8px;

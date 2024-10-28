@@ -1,0 +1,50 @@
+.property-parent {
+  width: 100%;
+  height: 100%;
+}
+
+.property-parent .hero {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.property-parent .hero .filter-box {
+  position: absolute;
+  bottom: -30px;
+  height: max-content;
+}
+
+.property-parent .properties-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.property-parent .properties-wrapper .properties {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* .properties .propery-card {
+  box-shadow: rgba(23, 23, 23, 0.021) 0px 7px 29px 0px;
+} */
+
+@media (max-width: 700px) {
+  .property-parent .hero .filter-box {
+    top: 80%;
+    bottom: 0;
+  }
+
+  .property-parent .hero {
+    margin-bottom: 24rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navBar.css";
 import PrimaryButton from "../buttons/PrimaryButton";
@@ -11,6 +11,16 @@ function NavBar() {
   const openMenu = () => {
     setMobileMenuVisible(!isMobileMenuVisbile);
   };
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const check = localStorage.getItem("token");
+    if (check) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <header
       className={` navbar-parent ${isMobileMenuVisbile ? "mobile-menu " : ""}"`}
@@ -43,8 +53,11 @@ function NavBar() {
           </ul>
         </nav>
         <div className="user">
-          <Link to="/login">
-            <PrimaryButton text="Login" isRounded={true} />
+          <Link to={isLoggedIn ? "/addProperty" : "/login"}>
+            <PrimaryButton
+              text={isLoggedIn ? "Add Property" : "Login"}
+              isRounded={true}
+            />
           </Link>
         </div>
         <Link onClick={openMenu} className="menu-button">
@@ -87,7 +100,10 @@ function NavBar() {
         </ul>
       </nav>
       <div className="user-mobile">
-        <PrimaryButton text="Login" isRounded={true} />
+        <PrimaryButton
+          text={isLoggedIn ? "Add Property" : "Login"}
+          isRounded={true}
+        />
       </div>
     </header>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import Carousel from "react-bootstrap/Carousel";
 import PrimaryButton from "../../components/buttons/PrimaryButton";
@@ -19,8 +19,46 @@ import TestimonialCard from "../../components/cards/testimonialCard/TestimonialC
 import Testimonials from "../../components/banners/testinomials/Testimonials";
 import AgentCard from "../../components/cards/agentcard/AgentCard";
 import ImagesBanner from "../../components/banners/imagesBanner/ImagesBanner";
+import PropsComponent from "../../PropsComponent";
+import MySearchBar from "../../components/searchBar/SearchBar";
+import { getProperties } from "../../api/property_api";
+import { getAgents } from "../../api/agents_api";
 function Home() {
+  const [propertyData, setPropertyData] = useState([]);
+  const [agentsData, setAgentsData] = useState([]);
+
+  // Fetch data using useEffect
   useEffect(() => {
+    const getData = async () => {
+      try {
+        var properties_list = Array();
+        var agents_list = Array();
+        const Properties = await getProperties({});
+        const agengts = await getAgents();
+        for (var i = 0; i < Properties.length; i++) {
+          if (i > 3) {
+            break;
+          }
+          properties_list.push(Properties[i]);
+          setPropertyData(properties_list);
+        }
+        for (var j = 0; j < agengts.length; j++) {
+          if (j > 3) {
+            break;
+          }
+          agents_list.push(agengts[j]);
+          console.log();
+        }
+
+        setAgentsData(agents_list);
+      } catch (error) {
+        console.error("Error fetching properties:", error);
+      }
+    };
+
+    getData();
+
+    // Initialize AOS
     AOS.init();
   }, []);
 
@@ -87,61 +125,7 @@ function Home() {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-          <div className="filter-box container">
-            <div className="filter-buttons">
-              <SecondaryButton text="Buy Properties" />
-              <PrimaryButton text="Sell Properties" />
-            </div>
-            <div className="filter-options">
-              <div className="filters">
-                <p>Enter Keyword</p>
-                <input
-                  className="filter-search"
-                  type="text"
-                  placeholder="Enter Keyword"
-                />
-              </div>
-              <div className="filters">
-                <p>Property Type </p>
-                <select name="" id="" className="filter-dropdown">
-                  <option value="">Residential</option>
-                  <option value="">Commercial</option>
-                  <option value="">Land</option>
-                  <option value="">Industrial</option>
-                </select>
-              </div>
-              <div className="filters">
-                <p>Location</p>{" "}
-                <input
-                  className="filter-search"
-                  type="text"
-                  placeholder="Enter Location"
-                />
-              </div>
-              <div className="filters">
-                <p>Price Limit</p>
-                <select name="" id="" class="filter-dropdown">
-                  <option value="">$100</option>
-                  <option value="">$10,000</option>
-                  <option value="">$50,000</option>
-                  <option value="">$100,000</option>
-                  <option value="">$200,000</option>
-                  <option value="">$300,000</option>
-                  <option value="">$400,000</option>
-                  <option value="">$500,000</option>
-                  <option value="">$600,000</option>
-                  <option value="">$700,000</option>
-                  <option value="">$800,000</option>
-                  <option value="">$900,000</option>
-                  <option value="">$1,000,000</option>
-                  <option value="">$2,000,000</option>
-                </select>
-              </div>
-              <div className="filters filter-button">
-                <p>Search</p>
-              </div>
-            </div>
-          </div>
+          <MySearchBar />
         </div>
         {/* category Section */}
         <section className="container section categories-section">
@@ -355,46 +339,16 @@ function Home() {
                 <h1 className="heading">Featured Properties</h1>
               </div>
               <div className="properties">
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  data-aos-easing="ease-in-out"
-                  data-aos-duration="800"
-                >
-                  <PropertyCard />
-                </div>
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  data-aos-easing="ease-in-out"
-                  data-aos-duration="800"
-                >
-                  <PropertyCard />
-                </div>
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  data-aos-easing="ease-in-out"
-                  data-aos-duration="800"
-                >
-                  <PropertyCard />
-                </div>
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                  data-aos-easing="ease-in-out"
-                  data-aos-duration="800"
-                >
-                  <PropertyCard />
-                </div>
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                  data-aos-easing="ease-in-out"
-                  data-aos-duration="800"
-                >
-                  <PropertyCard />
-                </div>
+                {propertyData.map((property) => (
+                  <div
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-easing="ease-in-out"
+                    data-aos-duration="800"
+                  >
+                    <PropertyCard property={property} />
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -423,10 +377,9 @@ function Home() {
               </h1>
             </div>
             <div className="agents-list">
-              <AgentCard />
-              <AgentCard />
-              <AgentCard />
-              <AgentCard />
+              {agentsData.map((agent) => (
+                <AgentCard agentsData={agent} />
+              ))}
             </div>
           </div>
         </section>

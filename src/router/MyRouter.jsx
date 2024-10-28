@@ -9,6 +9,7 @@ import Contact from "../pages/contacts/Contact";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import SinglePropertyView from "../pages/properties/SinglePropertyView";
+import AddProperty from "../pages/properties/AddProperty";
 
 function MyRouter() {
   return (
@@ -22,6 +23,7 @@ function MyRouter() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/singlePropertyView" element={<SinglePropertyView />} />
+      <Route path="/addProperty" element={<AddProperty />} />
     </Routes>
   );
 }

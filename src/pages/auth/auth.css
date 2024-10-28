@@ -49,7 +49,7 @@
   border-radius: 1rem;
 }
 
-.auth-form div {
+.auth-form form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
